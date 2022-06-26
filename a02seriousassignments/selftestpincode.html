@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pincode</title>
+    <script>
+        let area = [{ pin: 422003, area: "Nashik" },
+                    { pin: 422002, area: "Dhule" },
+                    { pin: 422103, area: "Sinnar" },
+                    { pin: 422105, area: "sangamner" }];
+
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelector("#btn").addEventListener('click', () => {
+                console.log('click');
+                for(let i=0;i<area.length;i++){
+                    if(document.querySelector('#pincode').value==area[i].pin)
+                      {  document.querySelector('#Area').value=area[i].area;
+                        console.log('area find')
+                }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Self Test Pincode-Area</h1>
+    <br>
+    <h4> <span>Enter pincode : </span> <input type="text" id="pincode"> </h4>
+    <h4>Area : <input type="text" id="Area" style="margin-left: 60px;"></h4>
+    <button id="btn">Get area info</button>
+</body>
+
+</html>
